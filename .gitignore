@@ -40,4 +40,3 @@ virtualenv.py
 .gitconfig
 .python-version
 .pytest_cache/
-playground.py
