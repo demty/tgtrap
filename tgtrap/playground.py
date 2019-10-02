@@ -37,7 +37,8 @@ class InitState:
 
     @event_hook(name='hook_name', listens=['init.finished'])
     def after_init(self):
-        pass
+        # if we want to set current state to class state
+        self.capture_state()
 
 
 """
