@@ -1,2 +1,7 @@
+aiohttp
 pytest
 motor
+aiotg
+uvloop
+ujson
+envparse

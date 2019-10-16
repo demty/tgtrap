@@ -1,22 +1,23 @@
 class MainTg:
-    states = [InitState, StatesGroup,...]
+    states = [InitState, StatesGroup, ...]
     init_state = InitState
 
 
 class StatesGroup:
     states = [InitStateAnother, ...]
+
     def before_message_func(self):
-        if message == 'to main':
-            self.call_before('init.print_text')
+        if message == "to main":
+            self.call_before("init.print_text")
             self.call_after()
-            self.call('init.finished')  # transits state
+            self.call("init.finished")  # transits state
 
 
 class InitState:
-    name = 'init'
+    name = "init"
 
     def on_message(self):
-        self.event.spawn('finished')
+        self.event.spawn("finished")
         return [msgs]
 
     def on_inline(self):
@@ -31,11 +32,11 @@ class InitState:
     def on_error(self, error, kind):
         pass
 
-    @event(name='print_text')
+    @event(name="print_text")
     def some_text_print(self):
         pass
 
-    @event_hook(name='hook_name', listens=['init.finished'])
+    @event_hook(name="hook_name", listens=["init.finished"])
     def after_init(self):
         # if we want to set current state to class state
         self.capture_state()
